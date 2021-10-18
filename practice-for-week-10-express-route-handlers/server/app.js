@@ -90,6 +90,13 @@ app.post('/artist/:artistId/albums', (req, res, next) => {
   res.json(response)
 })
 
+app.get('/albums', (req, res, next) => {
+  const { startsWith } = req.query
+  console.log("SW:  ", startsWith)
+  const result = getFilteredAlbums(startsWith)
+  res.json(result)
+})
+
 app.post('/albums/:albumId(\\d+)', (req, res, next) => {
   const albumId = req.params.albumId
   const data = req.body
@@ -105,11 +112,6 @@ app.delete('/albums/:albumId(\\d+)', (req, res, next) => {
   })
 })
 
-app.get('/albums/:letter', (req, res, next) => {
-  const { letter } = req.params
-  const result = getFilteredAlbums(letter)
-  res.json(result)
-})
 
 
 app.get('/artists/:artistId/songs', (req, res, next) => {
