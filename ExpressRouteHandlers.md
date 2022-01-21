@@ -6,7 +6,7 @@ we need to either update http://localhost:8081/ to be http://localhost:8081/text
 OR 
 we need to remove text from the route below that sentence
 
-2. 
+2. ALL CORRECTIONS HAVE BEEN MADE
 
 Practice: Express Route Handlers 
 
